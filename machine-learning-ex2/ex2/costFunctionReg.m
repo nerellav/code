@@ -23,12 +23,13 @@ h = sigmoid(X * theta);
 
 theta_reg = theta;
 theta_reg(1,1) = 0;
+theta_square = theta_reg' * theta_reg;
 
 %disp(lambda * theta' * temp /m);
 
 J = (1/m) * (log(h)' * -y - (log(1-h)' * (1-y)));
 
-J = J + (lambda/(2*m) * theta_reg' * theta_reg);
+J = J + (lambda/(2*m) * theta_square);
 
 grad = (X' * (h - y)  + lambda * theta_reg)/m;
 
