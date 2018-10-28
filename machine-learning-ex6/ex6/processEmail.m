@@ -100,14 +100,14 @@ while ~isempty(email_contents)
 
 
 
-
-
-
-
-
+    for i = 1:length(vocabList)
+      if(strcmp(str, vocabList{i}))
+        word_indices = [ word_indices ; i];
+        break;
+      end
+    end
 
     % =============================================================
-
 
     % Print to screen, ensuring that the output lines are not too long
     if (l + length(str) + 1) > 78
