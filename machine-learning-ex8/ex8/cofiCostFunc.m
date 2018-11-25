@@ -51,14 +51,12 @@ J = J + (lambda / 2) * (sum(sumsq(X)) + sum(sumsq(Theta)));
 X_grad = (R .* (X * Theta' - Y)) * Theta + lambda * X;
 Theta_grad = (R' .* (X * Theta' - Y)') * X + lambda * Theta;
 
-
-
-
-
-
-
-
-
+%E = (X * Theta' - Y) .*  R;
+%r_theta = sum(sum(Theta.^2)) * lambda / 2;
+%r_x = sum(sum(X.^2)) * lambda / 2;
+%J = sum(sum(E .^ 2)) / 2 + r_x + r_theta;
+%X_grad = E * Theta + lambda * X;
+%Theta_grad = E' * X + lambda * Theta;
 
 
 % =============================================================
